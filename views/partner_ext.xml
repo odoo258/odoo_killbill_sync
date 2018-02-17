@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="data_tranport_killbill_id" model="ir.ui.view">
+        <field name="name">data_tranport killbill_id</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="before">
+                <label 
+                    for="killbill_id" 
+                    groups="odoo_killbill_sync.group_killbill_id_per_partner_form"
+                />
+
+                <div 
+                    name="killbill_id" 
+                    groups="odoo_killbill_sync.group_killbill_id_per_partner_form">
+
+                    <field name="killbill_id"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

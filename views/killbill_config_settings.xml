@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="odoo_killbill_sync.killbill_conf" model="ir.ui.view">
+        <field name="name">odoo_killbill_sync killbill_conf</field>
+        <field name="model">account.config.settings</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account.view_account_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr='//group[@groups="account.group_account_user"]' position="before">
+                <group string="KillBill Configuration" name="killbill_setting">
+                    <field name="group_discount_per_so_line" widget="radio"/>
+
+                    <field 
+                        name="kb_username" 
+                        attrs="{'invisible': [('group_discount_per_so_line', '!=', 1)]}"
+                    />
+                    <field 
+                        name="kb_password" 
+                        attrs="{'invisible': [('group_discount_per_so_line', '!=', 1)]}"
+                    />
+                    <field 
+                        name="api_url" 
+                        placeholder = "www.apilink.com or 123.123.123:8000"
+                        attrs="{'invisible': [('group_discount_per_so_line', '!=', 1)]}"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

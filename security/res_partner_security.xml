@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_killbill_id_per_partner_form" model="res.groups">
+            <field name="name">KillBill on Partner and Invoice Form</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+    </data>
+</odoo>
