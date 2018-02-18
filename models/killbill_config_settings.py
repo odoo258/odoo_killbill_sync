@@ -21,6 +21,10 @@ class killbillConfiguration(models.TransientModel):
     	if self.group_discount_per_so_line:
     		if not self.kb_username or not self.kb_password or not self.api_url:
     			raise ValidationError(_("Please fill all the three fields of Username,Password and URL of API."))
+        elif not self.group_discount_per_so_line:
+            self.kb_username = False
+            self.kb_password = False
+            self.api_url = False
 
     	return super(killbillConfiguration, self).execute()
 
